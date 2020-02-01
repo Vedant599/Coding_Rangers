@@ -25,11 +25,11 @@ private Button Login,Register;
         String UserPhoneKey=Paper.book().read(Prevalent.UserPhoneKey);
         String UserPasswordKey=Paper.book().read(Prevalent.UserPasswordKey);
         String UserParentdbNameKey=Paper.book().read(Prevalent.UserParentdbNameKey);
-        if(!(TextUtils.isEmpty(UserPhoneKey)&&TextUtils.isEmpty(UserPasswordKey))&&!TextUtils.isEmpty(UserParentdbNameKey))
+        /*if(!(TextUtils.isEmpty(UserPhoneKey)&&TextUtils.isEmpty(UserPasswordKey))&&!TextUtils.isEmpty(UserParentdbNameKey))
         {
             startActivity(new Intent(Home.this,Main2Activity.class));
             finish();
-        }
+        }*/
         Register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

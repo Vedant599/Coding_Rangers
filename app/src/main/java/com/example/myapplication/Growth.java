@@ -4,15 +4,15 @@ import com.google.gson.annotations.SerializedName;
 
 public class Growth {
     @SerializedName("Year")
-    private int year;
+    private int Year;
     @SerializedName("Growth_Rate")
-    private float growth_rate;
+    private float Growth_Rate;
 
     public int getYear() {
-        return year;
+        return Year;
     }
 
     public float getGrowth_rate() {
-        return growth_rate;
+        return Growth_Rate;
     }
 }

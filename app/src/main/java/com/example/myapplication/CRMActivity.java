@@ -19,6 +19,6 @@ public class CRMActivity extends AppCompatActivity {
         bundle.putString("method",method);
         scrm.setArguments(bundle);
 
-        getSupportFragmentManager().beginTransaction().add(R.id.container,scrm).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.container,scrm).commit();
     }
 }
