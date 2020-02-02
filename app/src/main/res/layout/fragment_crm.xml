@@ -10,8 +10,18 @@
         android:layout_height="match_parent"
         android:layout_margin="10dp"
         android:id="@+id/bar_chart"
+
         android:visibility="gone"
         ></com.github.mikephil.charting.charts.BarChart>
+    <ListView
+        android:id="@+id/list_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/bar_chart"
+        android:visibility="gone"
+        >
+
+    </ListView>
     <com.github.mikephil.charting.charts.PieChart
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -20,4 +30,10 @@
         android:visibility="gone"
         >
     </com.github.mikephil.charting.charts.PieChart>
+   <lecho.lib.hellocharts.view.LineChartView
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:id="@+id/line_chart"
+       android:visibility="gone"
+       ></lecho.lib.hellocharts.view.LineChartView>
 </RelativeLayout>

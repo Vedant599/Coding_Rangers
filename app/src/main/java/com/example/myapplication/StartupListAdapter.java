@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,41 +15,65 @@ import java.util.List;
 
 import static androidx.constraintlayout.widget.Constraints.TAG;
 
-public class StartupListAdapter extends RecyclerView.Adapter<StartupListAdapter.Holder> {
-    Context context;
+public class StartupListAdapter extends RecyclerView.Adapter<StartupListAdapter.ViewHolder> {
+   Context context;
     List<StartupData> startupData;
-    public StartupListAdapter(Context context, List startupData) {
+    public StartupListAdapter(List startupData) {
         super();
-        this.context=context;
+
         this.startupData=startupData;
     }
 
     @NonNull
     @Override
-    public Holder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v= LayoutInflater.from(context).inflate(R.layout.startup_list_item,parent,false);
-        return null;
+    public StartupListAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View v= LayoutInflater.from(parent.getContext()).inflate(R.layout.startup_list_item,parent,false);
+        ViewHolder holder=new ViewHolder(v);
+        context=parent.getContext();
+        Log.d("kun", "onCreateViewHolder: ");
+        return holder;
+
     }
 
     @Override
-    public void onBindViewHolder(@NonNull Holder holder, int position) {
-        holder.name.setText(startupData.get(position).getCompanyName());
-        holder.worth.setText(startupData.get(position).getNetWorth());
+    public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
+        holder.setData(startupData.get(position).getCompanyName(),startupData.get(position).getNetWorth());
+        holder.name.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(context,NewsFeed.class);
+                intent.putExtra("Name",startupData.get(position).getCompanyName());
+                context.startActivity(intent);
+            }
+        });
         Log.d("kun", "onBindViewHolder: "+startupData.get(position).getCompanyName());
     }
 
+
     @Override
     public int getItemCount() {
-        return 0;
+        return startupData.size();
     }
 
-    class Holder extends RecyclerView.ViewHolder{
+    public class ViewHolder extends RecyclerView.ViewHolder
+    {
         TextView name,worth;
-        public Holder(@NonNull View itemView) {
+
+
+        public ViewHolder(@NonNull View itemView) {
             super(itemView);
             name=itemView.findViewById(R.id.stname);
             worth=itemView.findViewById(R.id.stworth);
-
+        }
+        public void setData(String Name,String Worth)
+        {
+            name.setText("Name :"+Name);
+            worth.setText("Net Worth: "+Worth+" Billion");
+        }
+        public void add(List<StartupData> chats)
+        {
+            startupData.addAll(chats);
+            notifyDataSetChanged();
         }
     }
 }

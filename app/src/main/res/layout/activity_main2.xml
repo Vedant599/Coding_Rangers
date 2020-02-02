@@ -8,39 +8,41 @@
 
     <Button
         android:id="@+id/ButtonBar"
-        android:layout_width="wrap_content"
+
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Bar"
+        android:layout_centerVertical="true"
+        android:layout_margin="20dp"
+        android:background="@drawable/bg"
+        android:padding="15dp"
+        android:text="Line Chart for Analysis"
+        android:textSize="17sp"
+        android:textStyle="italic|bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.842"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.187" />
+        app:layout_constraintVertical_bias="0.294"></Button>
 
     <Button
         android:id="@+id/ButtonPie"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Pie"
+        android:layout_centerVertical="true"
+        android:layout_margin="20dp"
+        android:background="@drawable/bg"
+        android:padding="15dp"
+        android:text="Pie Chart for startup analysis of growth"
+        android:textAllCaps="false"
+        android:textSize="17sp"
+        android:textStyle="italic|bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintHorizontal_bias="0.842"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ButtonDatabase"
-        app:layout_constraintVertical_bias="0.212" />
-
-    <Button
-        android:id="@+id/ButtonDatabase"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Database"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ButtonBar"
-        app:layout_constraintVertical_bias="0.191" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.556"></Button>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

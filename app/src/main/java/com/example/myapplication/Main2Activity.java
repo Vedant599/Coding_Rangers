@@ -16,7 +16,7 @@ private Button Pie,Bar,Database;
         setContentView(R.layout.activity_main2);
         Pie=findViewById(R.id.ButtonPie);
         Bar=findViewById(R.id.ButtonBar);
-        Database=findViewById(R.id.ButtonDatabase);
+
         Pie.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -34,12 +34,6 @@ private Button Pie,Bar,Database;
                 startActivity(intent);
             }
         });
-        Database.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Main2Activity.this, DatabaseAct.class);
-                startActivity(intent);
-            }
-        });
+
     }
 }
